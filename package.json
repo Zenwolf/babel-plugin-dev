@@ -1,0 +1,28 @@
+{
+  "name": "babel-plugin-dev",
+  "version": "0.0.1",
+  "description": "Babel plugin that replaces the \"__DEV__\" keyword with \"process.env.NODE_ENV !== 'production'\" for dev- and debug-specific code.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zenwolf/babel-plugin-dev.git"
+  },
+  "keywords": [
+    "babel",
+    "plugin",
+    "dev",
+    "debug"
+  ],
+  "author": "Matthew Jaquish <mattjaq@yahoo.com>",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/Zenwolf/babel-plugin-dev/issues"
+  },
+  "homepage": "https://github.com/Zenwolf/babel-plugin-dev#readme",
+  "devDependencies": {
+    "babel-core": "^5.8.5"
+  }
+}
