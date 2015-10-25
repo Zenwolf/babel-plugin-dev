@@ -3,4 +3,4 @@
 Use Babel to replace "\_\_DEV\_\_" keyword with "process.env.NODE_ENV !== 'production'"
 
 ## Install
-`npm install --save-dev babel-plugin-dev
+`npm install --save-dev babel-plugin-dev`
