@@ -12,28 +12,29 @@
  * minifiers and to make it easier to write debug and dev-specific code.
  */
 module.exports = function(babel) {
-    var t = babel.types;
-    var DEV_EXPRESSION = t.binaryExpression(
-        '!==',
-        t.literal('production'),
-        t.memberExpression(
-            t.memberExpression(
-                t.identifier('process'),
-                t.identifier('env'),
-                false
-            ),
-            t.identifier('NODE_ENV'),
-            false
-        )
-    );
+  var t = babel.types;
 
-    return new babel.Transformer('babel-plugin-dev', {
-        Identifier: {
-            enter: function(node, parent) {
-                if (this.isIdentifier({ name: '__DEV__'})) {
-                    return DEV_EXPRESSION;
-                }
-            }
+  var DEV_EXPRESSION = t.binaryExpression(
+    '!==',
+    t.stringLiteral('production'),
+    t.memberExpression(
+      t.memberExpression(
+        t.identifier('process'),
+        t.identifier('env'),
+        false
+      ),
+      t.identifier('NODE_ENV'),
+      false
+    )
+  );
+
+  return {
+    visitor: {
+      Identifier: function(path) {
+        if (t.isIdentifier(path.node, { name: '__DEV__'})) {
+          path.replaceWith(DEV_EXPRESSION);
         }
-    });
+      }
+    }
+  };
 };
