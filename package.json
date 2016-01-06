@@ -1,9 +1,10 @@
 {
   "name": "babel-plugin-dev",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Babel plugin that replaces the \"__DEV__\" keyword with \"process.env.NODE_ENV !== 'production'\" for dev- and debug-specific code.",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint index.js ./test/index.js",
     "test": "mocha"
   },
   "repository": {
@@ -23,6 +24,7 @@
   "homepage": "https://github.com/Zenwolf/babel-plugin-dev#readme",
   "devDependencies": {
     "babel-core": "^6.2.1",
+    "eslint": "^1.10.3",
     "mocha": "^2.3.4"
   }
 }
